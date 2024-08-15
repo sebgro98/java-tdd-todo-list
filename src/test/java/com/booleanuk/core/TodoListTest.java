@@ -60,11 +60,17 @@ class TodoListTest {
     }
 
     @Test
-    public void removeTask() {
+    public void removeTaskTest() {
         todoList.addToList(tasks1);
         Assertions.assertNotEquals(0, TodoList.listOfTasks.size());
         TodoList.removeTasks(tasks1);
         Assertions.assertEquals(0, TodoList.listOfTasks.size());
+    }
+
+    @Test
+    public void changeStatusOfTask() {
+        todoList.addToList(tasks1);
+        Assertions.assertNotEquals(tasks1, TodoList.changeStatusOfTask(tasks1));
     }
 
 }

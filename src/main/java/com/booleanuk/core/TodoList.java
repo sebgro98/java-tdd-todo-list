@@ -68,7 +68,10 @@ public class TodoList {
         listOfTasks.removeIf(listOfTask -> listOfTask.equals(task));
     }
 
+    public static Tasks changeStatusOfTask(Tasks tasks) {
 
+        return tasks;
+    }
 
 }
 
