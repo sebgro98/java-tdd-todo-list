@@ -29,5 +29,11 @@ class TodoListTest {
         Assertions.assertFalse(TodoList.listOfTasks.contains(tasks2));
     }
 
+    @Test
+    public void showTasksTest() {
+        todoList.addToList(tasks1);
+        Assertions.assertEquals("task1 : false", TodoList.showList(TodoList.listOfTasks));
+    }
+
 
 }

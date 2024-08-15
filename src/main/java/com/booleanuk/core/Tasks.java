@@ -10,7 +10,7 @@ public class Tasks {
         this.statusForTask = statusForTask;
     }
 
-    public String getTask() {
+  /*  public String getTask() {
         return name;
     }
 
@@ -25,7 +25,7 @@ public class Tasks {
     public void setStatusForTask(boolean statusForTask) {
         this.statusForTask = statusForTask;
     }
-
+*/
     @Override
     public String toString() {
         return this.name + " : " + this.statusForTask;

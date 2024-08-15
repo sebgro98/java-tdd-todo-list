@@ -11,24 +11,30 @@ public class TodoList {
     }
 
     public void addToList(Tasks task) {
-        //Tasks tasks = new Tasks(task);
-        //tasks.setTask(task);
-        //tasks.setStatusForTask(statusForTask);
+        System.out.println(task + "  aa");
         listOfTasks.add(task);
-        //searchForATask("task1");
         System.out.println(listOfTasks.getFirst());
     }
 
-    /*public void searchForATask(String name) {
+
+    public static String showList(ArrayList<Tasks> listOfTasks) {
+        String listOfItems = "";
+
+
+        return  listOfItems;
+
+    }
+
+    /*public void searchForATask(Tasks task) {
         for(int i = 0; i < listOfTasks.size(); i++) {
-            if(listOfTasks.get(i).(name)) {
+            if(listOfTasks.get(i).equals(task)) {
                 System.out.println("Found");
             }
             System.out.println("Not found");
 
         }
 
-    } */
+    }*/
 
 
 
