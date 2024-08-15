@@ -57,6 +57,12 @@ class TodoListTest {
     }
 
     @Test
+    public void updateNameByUniqueIDTest(){
+        todoList.addToList(tasks2);
+        Assertions.assertNotEquals(tasks2,tasks2);
+    }
+
+    @Test
     public void removeTaskTest() {
         todoList.addToList(tasks1);
         Assertions.assertNotEquals(0, todoList.listOfTasks.size());
