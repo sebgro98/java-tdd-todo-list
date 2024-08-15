@@ -54,6 +54,7 @@ class TodoListTest {
 
     @Test
     public void searchForTasksTest() {
+        todoList.addToList(tasks2);
         Assertions.assertEquals(null,TodoList.searchForTasks(tasks1));
         Assertions.assertEquals(tasks2,TodoList.searchForTasks(tasks2));
     }
