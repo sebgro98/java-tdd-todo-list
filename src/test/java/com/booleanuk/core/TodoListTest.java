@@ -4,9 +4,15 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class TodoListTest {
-    TodoList todoList;
+    TodoList todoList = new TodoList();;
+    Tasks tasks1;
+    Tasks tasks2;
+
     TodoListTest() {
-        todoList = new TodoList();
+        this.tasks1 = new Tasks("task1", false);
+        this.tasks2 = new Tasks("task1", true);
+
+
     }
     @Test
     public void exampleTest() {
@@ -17,7 +23,9 @@ class TodoListTest {
 
     @Test
     public void addTaskTest() {
-        Assertions.assertEquals(todoList.tasks.size() + 1, todoList.addToList(Task task));
+        todoList.addToList(tasks1);
+        Assertions.assertEquals(1, TodoList.listOfTasks.size());
+        //Assertions.assertTrue(TodoList.listOfTasks.contains(tasks1));
     }
 
 
