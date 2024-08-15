@@ -25,7 +25,7 @@ class TodoListTest {
     public void addTaskTest() {
         todoList.addToList(tasks1);
         Assertions.assertEquals(1, TodoList.listOfTasks.size());
-        //Assertions.assertTrue(TodoList.listOfTasks.contains(tasks1));
+        Assertions.assertTrue(TodoList.listOfTasks.contains(tasks1));
     }
 
 
