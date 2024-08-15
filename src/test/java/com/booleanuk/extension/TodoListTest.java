@@ -59,7 +59,16 @@ class TodoListTest {
     @Test
     public void updateNameByUniqueIDTest(){
         todoList.addToList(tasks2);
-        Assertions.assertNotEquals(tasks2,tasks2);
+        todoList.addToList(tasks4);
+        Assertions.assertNotEquals(tasks2.toString(),todoList.updateNameByUniqueID(tasks2, "task4"));
+        Assertions.assertEquals("task4",todoList.updateNameByUniqueID(tasks2, "task4"));
+
+    }
+
+    @Test
+    public void changeStatusOfTaskByIDTest() {
+        todoList.addToList(tasks2); //true -> false
+        Assertions.assertEquals(tasks2.isStatusForTask(), todoList.changeStatusOfTaskByID(tasks2));
     }
 
     @Test
@@ -70,13 +79,16 @@ class TodoListTest {
         Assertions.assertEquals(0, todoList.listOfTasks.size());
     }
 
-    @Test
+  /*
+  OLD test
+
+  @Test
     public void changeStatusOfTaskTest() {
         todoList.addToList(tasks1);
         todoList.addToList(tasks2);
-        Assertions.assertNotEquals(tasks1.toString(), todoList.changeStatusOfTask(tasks1)); // change to true
-        Assertions.assertNotEquals(tasks2.toString(), todoList.changeStatusOfTask(tasks2)); // change to false
-    }
+        Assertions.assertNotEquals(tasks1.toString(), todoList.changeStatusOfTaskByID(tasks1)); // change to true
+        Assertions.assertNotEquals(tasks2.toString(), todoList.changeStatusOfTaskByID(tasks2)); // change to false
+    }*/
 
     @Test
     public void alphAscendingTest() {

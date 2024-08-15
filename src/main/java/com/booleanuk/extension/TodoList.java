@@ -61,16 +61,21 @@ public class TodoList {
         return null;
     }
 
-    public Tasks updateNameByUniqueID(Tasks task) {
-
-        return task;
+    public String updateNameByUniqueID(Tasks task, String newName) {
+        for (Tasks listOfTask : listOfTasks) {
+            if(task.getUuid().equals(listOfTask.getUuid())) {
+                listOfTask.setTask(newName);
+            }
+        }
+        System.out.println(task);
+        return task.getTask();
     }
 
     public void removeTasks(Tasks task) {
         listOfTasks.removeIf(listOfTask -> listOfTask.equals(task));
     }
 
-    public String changeStatusOfTask(Tasks task) {
+    public boolean changeStatusOfTaskByID(Tasks task) {
 
         for (Tasks listOfTask : listOfTasks) {
             if(task.equals(listOfTask)) {
@@ -80,7 +85,7 @@ public class TodoList {
             }
         }
 
-        return task.toString();
+        return task.isStatusForTask();
     }
 
     public String alphAscending(ArrayList<Tasks> tasks) {
