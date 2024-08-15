@@ -53,5 +53,16 @@ public class TodoList {
         return notCompletedTask.toString();
     }
 
+    public static Tasks searchForTasks(Tasks task) {
+
+        for (Tasks listOfTask : listOfTasks) {
+            if(task.equals(listOfTask)) {
+                return task;
+            }
+        }
+        System.out.println("Your task did not exist");
+        return null;
+    }
+
 }
 

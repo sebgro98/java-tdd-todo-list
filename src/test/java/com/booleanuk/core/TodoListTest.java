@@ -52,5 +52,11 @@ class TodoListTest {
         Assertions.assertNotEquals("[task2 : true]", TodoList.searchForNotCompletedTasks());
     }
 
+    @Test
+    public void searchForTasksTest() {
+        Assertions.assertEquals(null,TodoList.searchForTasks(tasks1));
+        Assertions.assertEquals(tasks2,TodoList.searchForTasks(tasks2));
+    }
+
 
 }
