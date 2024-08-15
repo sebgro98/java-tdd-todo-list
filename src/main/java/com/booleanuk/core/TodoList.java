@@ -65,12 +65,10 @@ public class TodoList {
     }
 
     public static void removeTasks(Tasks task) {
-        for (Tasks listOfTask : listOfTasks) {
-            if(task.equals(listOfTask)) {
-                listOfTasks.remove(listOfTask);
-            }
-        }
+        listOfTasks.removeIf(listOfTask -> listOfTask.equals(task));
     }
+
+
 
 }
 
