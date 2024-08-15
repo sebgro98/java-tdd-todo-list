@@ -81,5 +81,10 @@ public class TodoList {
         return task.toString();
     }
 
+    public static ArrayList<Tasks> alphAscending(ArrayList<Tasks> tasks) {
+
+        return tasks;
+    }
+
 }
 

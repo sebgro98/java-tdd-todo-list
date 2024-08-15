@@ -75,4 +75,10 @@ class TodoListTest {
         Assertions.assertNotEquals(tasks2.toString(), TodoList.changeStatusOfTask(tasks2)); // change to false
     }
 
+    @Test
+    public void alphAscendingTest() {
+        todoList.addToList(tasks1);
+        Assertions.assertNotEquals(TodoList.listOfTasks, TodoList.alphAscending(TodoList.listOfTasks));
+    }
+
 }
