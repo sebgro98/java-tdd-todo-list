@@ -68,9 +68,17 @@ public class TodoList {
         listOfTasks.removeIf(listOfTask -> listOfTask.equals(task));
     }
 
-    public static Tasks changeStatusOfTask(Tasks tasks) {
-
-        return tasks;
+    public static String changeStatusOfTask(Tasks task) {
+        System.out.println(task + " First");
+        for (Tasks listOfTask : listOfTasks) {
+            if(task.equals(listOfTask)) {
+                if(!listOfTask.isStatusForTask()) {
+                    listOfTask.setStatusForTask(true);
+                } else listOfTask.setStatusForTask(false);
+            }
+            }
+        System.out.println(task + " Second");
+        return task.toString();
     }
 
 }

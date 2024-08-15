@@ -70,7 +70,9 @@ class TodoListTest {
     @Test
     public void changeStatusOfTask() {
         todoList.addToList(tasks1);
-        Assertions.assertNotEquals(tasks1, TodoList.changeStatusOfTask(tasks1));
+        todoList.addToList(tasks2);
+        Assertions.assertNotEquals(tasks1.toString(), TodoList.changeStatusOfTask(tasks1)); // change to true
+        Assertions.assertNotEquals(tasks2.toString(), TodoList.changeStatusOfTask(tasks2)); // change to false
     }
 
 }
