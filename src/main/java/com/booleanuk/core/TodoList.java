@@ -1,24 +1,20 @@
 package com.booleanuk.core;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class TodoList {
 
-    static ArrayList<Tasks> listOfTasks = new ArrayList<>();
-
-    TodoList() {
-        //this.listOfTasks =
-    }
+    ArrayList<Tasks> listOfTasks = new ArrayList<>();
 
     public void addToList(Tasks task) {
-        System.out.println(task + "  aa");
         listOfTasks.add(task);
-        System.out.println(listOfTasks.getFirst());
-        //return  listOfTasks;
+
     }
 
 
-    public static String showList(ArrayList<Tasks> listOfTasks) {
+    public String showList(ArrayList<Tasks> listOfTasks) {
         StringBuilder listOfItems = new StringBuilder();
         for (Tasks listOfTask : listOfTasks) {
             listOfItems.append(listOfTask);
@@ -29,7 +25,7 @@ public class TodoList {
 
     }
 
-    public static String searchForCompletedTasks() {
+    public String searchForCompletedTasks() {
         ArrayList<Tasks> completedTask = new ArrayList<>();
         for (Tasks listOfTask : listOfTasks) {
             if (listOfTask.isStatusForTask()) {
@@ -41,7 +37,7 @@ public class TodoList {
         return completedTask.toString();
     }
 
-    public static String searchForNotCompletedTasks() {
+    public String searchForNotCompletedTasks() {
         ArrayList<Tasks> notCompletedTask = new ArrayList<>();
         for (Tasks listOfTask : listOfTasks) {
             if (!(listOfTask.isStatusForTask())) {
@@ -53,7 +49,7 @@ public class TodoList {
         return notCompletedTask.toString();
     }
 
-    public static Tasks searchForTasks(Tasks task) {
+    public Tasks searchForTasks(Tasks task) {
 
         for (Tasks listOfTask : listOfTasks) {
             if(task.equals(listOfTask)) {
@@ -64,12 +60,12 @@ public class TodoList {
         return null;
     }
 
-    public static void removeTasks(Tasks task) {
+    public void removeTasks(Tasks task) {
         listOfTasks.removeIf(listOfTask -> listOfTask.equals(task));
     }
 
-    public static String changeStatusOfTask(Tasks task) {
-        System.out.println(task + " First");
+    public String changeStatusOfTask(Tasks task) {
+
         for (Tasks listOfTask : listOfTasks) {
             if(task.equals(listOfTask)) {
                 if(!listOfTask.isStatusForTask()) {
@@ -77,13 +73,20 @@ public class TodoList {
                 } else listOfTask.setStatusForTask(false);
             }
             }
-        System.out.println(task + " Second");
+
         return task.toString();
     }
 
-    public static ArrayList<Tasks> alphAscending(ArrayList<Tasks> tasks) {
+    public String alphAscending(ArrayList<Tasks> tasks) {
+        listOfTasks.sort((task1, task2) -> task1.getTask().compareToIgnoreCase(task2.getTask()));
+        
+        return tasks.toString();
+    }
 
-        return tasks;
+    public String alphDecending(ArrayList<Tasks> tasks) {
+        listOfTasks.sort((task1, task2) -> task1.getTask().compareToIgnoreCase(task2.getTask()));
+        Collections.reverse(listOfTasks);
+        return tasks.toString();
     }
 
 }
