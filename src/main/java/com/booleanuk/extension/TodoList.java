@@ -1,12 +1,9 @@
 package com.booleanuk.extension;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Objects;
+
 
 public class TodoList {
 
@@ -98,7 +95,7 @@ public class TodoList {
             System.out.println(task.getNow());
             result += listOfTask.getNow().truncatedTo(ChronoUnit.SECONDS).toString();
         }
-            return result.toString();
+            return result;
 
     }
 
