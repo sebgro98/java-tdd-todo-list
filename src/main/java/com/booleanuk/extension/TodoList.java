@@ -1,5 +1,8 @@
 package com.booleanuk.extension;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -54,6 +57,7 @@ public class TodoList {
 
         for (Tasks listOfTask : listOfTasks) {
             if(task.getUuid().equals(listOfTask.getUuid())) {
+                System.out.println(task);
                 return task;
             }
         }
@@ -86,6 +90,16 @@ public class TodoList {
         }
 
         return task.isStatusForTask();
+    }
+
+    public String showDateAndTimeOfATask(Tasks task) {
+        String result = "";
+        for (Tasks listOfTask : listOfTasks) {
+            System.out.println(task.getNow());
+            result += listOfTask.getNow().truncatedTo(ChronoUnit.SECONDS).toString();
+        }
+            return result.toString();
+
     }
 
     public String alphAscending(ArrayList<Tasks> tasks) {

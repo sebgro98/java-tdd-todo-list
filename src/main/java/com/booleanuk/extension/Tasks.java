@@ -1,5 +1,7 @@
 package com.booleanuk.extension;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 public class Tasks {
@@ -7,13 +9,19 @@ public class Tasks {
     private String name;
     private boolean statusForTask;
     private String uuid;
-
+    LocalDateTime now;
 
 
     public Tasks(String name, boolean statusForTask) {
         this.name = name;
         this.statusForTask = statusForTask;
         generateId();
+        this.now = LocalDateTime.now();
+
+    }
+
+    public LocalDateTime getNow() {
+        return now;
     }
 
     private void generateId(){
