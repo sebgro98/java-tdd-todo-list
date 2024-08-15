@@ -68,7 +68,7 @@ class TodoListTest {
     @Test
     public void changeStatusOfTaskByIDTest() {
         todoList.addToList(tasks2); //true -> false
-        Assertions.assertEquals(tasks2.isStatusForTask(), todoList.changeStatusOfTaskByID(tasks2));
+        Assertions.assertNotEquals(tasks2.isStatusForTask(), todoList.changeStatusOfTaskByID(tasks2));
     }
 
     @Test

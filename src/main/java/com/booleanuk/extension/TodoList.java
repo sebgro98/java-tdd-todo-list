@@ -78,7 +78,7 @@ public class TodoList {
     public boolean changeStatusOfTaskByID(Tasks task) {
 
         for (Tasks listOfTask : listOfTasks) {
-            if(task.equals(listOfTask)) {
+            if(task.getUuid().equals(listOfTask.getUuid())) {
                 if(!listOfTask.isStatusForTask()) {
                     listOfTask.setStatusForTask(true);
                 } else listOfTask.setStatusForTask(false);
