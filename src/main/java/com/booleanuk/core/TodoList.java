@@ -19,7 +19,10 @@ public class TodoList {
 
     public static String showList(ArrayList<Tasks> listOfTasks) {
         String listOfItems = "";
+        for (Tasks listOfTask : listOfTasks) {
+            listOfItems += listOfTask;
 
+        }
 
         return  listOfItems;
 
