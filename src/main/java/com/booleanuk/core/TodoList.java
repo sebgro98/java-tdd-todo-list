@@ -44,7 +44,7 @@ public class TodoList {
     public static String searchForNotCompletedTasks() {
         ArrayList<Tasks> notCompletedTask = new ArrayList<>();
         for (Tasks listOfTask : listOfTasks) {
-            if ((listOfTask.isStatusForTask())) {
+            if (!(listOfTask.isStatusForTask())) {
                 notCompletedTask.add(listOfTask);
             }
 
