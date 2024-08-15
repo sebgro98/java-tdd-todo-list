@@ -10,7 +10,7 @@ class TodoListTest {
 
     TodoListTest() {
         this.tasks1 = new Tasks("task1", false);
-        this.tasks2 = new Tasks("task1", true);
+        this.tasks2 = new Tasks("task2", true);
 
 
     }
@@ -33,6 +33,12 @@ class TodoListTest {
     public void showTasksTest() {
         todoList.addToList(tasks1);
         Assertions.assertEquals("task1 : false", TodoList.showList(TodoList.listOfTasks));
+    }
+
+    @Test
+    public void searchForCompletedTasks() {
+        todoList.addToList(tasks1);
+        Assertions.assertEquals("[task2 : true]", TodoList.searchForCompletedTasks());
     }
 
 

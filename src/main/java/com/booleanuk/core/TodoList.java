@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class TodoList {
 
-    static ArrayList<Tasks> listOfTasks  = new ArrayList<>();
+    static ArrayList<Tasks> listOfTasks = new ArrayList<>();
 
     TodoList() {
-       //this.listOfTasks =
+        //this.listOfTasks =
     }
 
     public void addToList(Tasks task) {
@@ -23,24 +23,21 @@ public class TodoList {
             listOfItems += listOfTask;
 
         }
-
-        return  listOfItems;
+        System.out.println(listOfItems);
+        return listOfItems;
 
     }
 
-    /*public void searchForATask(Tasks task) {
-        for(int i = 0; i < listOfTasks.size(); i++) {
-            if(listOfTasks.get(i).equals(task)) {
-                System.out.println("Found");
+    public static String searchForCompletedTasks() {
+        ArrayList<Tasks> completedTask = new ArrayList<>();
+        for (Tasks listOfTask : listOfTasks) {
+            if (listOfTask.isStatusForTask()) {
+                completedTask.add(listOfTask);
             }
-            System.out.println("Not found");
+
 
         }
-
-    }*/
-
-
-
-
-
+        return completedTask.toString();
+    }
 }
+
