@@ -14,17 +14,18 @@ public class TodoList {
         System.out.println(task + "  aa");
         listOfTasks.add(task);
         System.out.println(listOfTasks.getFirst());
+        //return  listOfTasks;
     }
 
 
     public static String showList(ArrayList<Tasks> listOfTasks) {
-        String listOfItems = "";
+        StringBuilder listOfItems = new StringBuilder();
         for (Tasks listOfTask : listOfTasks) {
-            listOfItems += listOfTask;
+            listOfItems.append(listOfTask);
 
         }
         System.out.println(listOfItems);
-        return listOfItems;
+        return listOfItems.toString();
 
     }
 
@@ -39,5 +40,18 @@ public class TodoList {
         }
         return completedTask.toString();
     }
+
+    public static String searchForNotCompletedTasks() {
+        ArrayList<Tasks> notCompletedTask = new ArrayList<>();
+        for (Tasks listOfTask : listOfTasks) {
+            if ((listOfTask.isStatusForTask())) {
+                notCompletedTask.add(listOfTask);
+            }
+
+
+        }
+        return notCompletedTask.toString();
+    }
+
 }
 

@@ -30,7 +30,7 @@ class TodoListTest {
     }
 
     @Test
-    public void showTasksTest() {
+    public void showAllTasksTest() {
         todoList.addToList(tasks1);
         Assertions.assertEquals("task1 : false", TodoList.showList(TodoList.listOfTasks));
     }
@@ -38,7 +38,18 @@ class TodoListTest {
     @Test
     public void searchForCompletedTasks() {
         todoList.addToList(tasks1);
+        todoList.addToList(tasks2);
+
         Assertions.assertEquals("[task2 : true]", TodoList.searchForCompletedTasks());
+        Assertions.assertNotEquals("[task1 : false]", TodoList.searchForCompletedTasks());
+    }
+
+    @Test
+    public void searchNotForCompletedTasks() {
+        todoList.addToList(tasks2);
+        todoList.addToList(tasks1);
+        Assertions.assertEquals("[task1 : false]", TodoList.searchForNotCompletedTasks());
+        Assertions.assertNotEquals("[task2 : true]", TodoList.searchForNotCompletedTasks());
     }
 
 
